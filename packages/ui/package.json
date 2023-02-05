@@ -1,0 +1,30 @@
+{
+  "name": "@so-join/ui",
+  "version": "0.0.1",
+  "sideEffects": [
+    "*.css"
+  ],
+  "private": true,
+  "types": "./types/index.d.ts",
+  "main": "src/index.tsx",
+  "module:jsx": "src",
+  "files": [
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tamagui-build",
+    "dev": "tamagui-build --watch"
+  },
+  "dependencies": {
+    "@tamagui/animations-react-native": "^1.2.5",
+    "@tamagui/font-inter": "^1.2.5",
+    "@tamagui/react-native-media-driver": "^1.2.5",
+    "@tamagui/shorthands": "^1.2.5",
+    "@tamagui/theme-base": "^1.2.5",
+    "tamagui": "^1.2.5"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.2.5"
+  }
+}
