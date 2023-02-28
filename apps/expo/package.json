@@ -4,11 +4,12 @@
   "main": "index.ts",
   "scripts": {
     "clean": "rm -rf .expo .turbo node_modules",
-    "dev": "TAMAGUI_TARGET=native TAMAGUI_ENABLE_DYNAMIC_LOAD=1 TAMAGUI_DISABLE_WARN_DYNAMIC_LOAD=1 expo start --ios",
+    "dev": "pnpm with-env expo start",
     "dev:android": "expo start --android",
     "dev:ios": "expo start --ios",
     "lint": "eslint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@acme/api": "*",
