@@ -19,6 +19,5 @@
       "@so-join/ui/*": ["./packages/ui/*"]
     }
   },
-  "include": [".eslintrc.js"],
-  "extends": "expo/tsconfig.base"
+  "include": [".eslintrc.js"]
 }
