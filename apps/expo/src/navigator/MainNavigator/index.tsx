@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BarChart2, Plus, List } from "@tamagui/lucide-icons";
-import { Stack, Typography, tokens } from "@so-join/ui";
+import { Stack, tokens } from "@so-join/ui";
 
 import { Home } from "../../screens";
 

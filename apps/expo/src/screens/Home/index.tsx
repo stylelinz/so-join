@@ -1,17 +1,17 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Settings } from "@tamagui/lucide-icons";
-import { MyComponent, Stack, YStack, Typography, tokens } from "@so-join/ui";
+import { Stack, YStack, Typography, tokens, Background } from "@so-join/ui";
 import { EventCard } from "components";
 
 export function Home() {
   return (
-    <MyComponent>
+    <Background>
       <SafeAreaView style={{ flex: 1 }}>
         <Stack flex={1}>
           {/* HEADER */}
           <Stack paddingVertical={12} paddingHorizontal={24}>
             <Stack flexDirection="row" alignItems="center">
-              <Typography variant="h1" flex="1">
+              <Typography variant="h1" flex={1}>
                 總覽
               </Typography>
               <Settings
@@ -27,6 +27,6 @@ export function Home() {
           </YStack>
         </Stack>
       </SafeAreaView>
-    </MyComponent>
+    </Background>
   );
 }
