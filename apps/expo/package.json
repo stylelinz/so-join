@@ -34,11 +34,6 @@
     "react-native-svg": "^13.9.0",
     "react-native-web": "^0.18.12"
   },
-  "dependenciesMeta": {
-    "@so-join/ui": {
-      "injected": true
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.3",

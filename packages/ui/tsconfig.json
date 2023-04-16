@@ -4,7 +4,8 @@
   "compilerOptions": {
     "composite": true,
     "esModuleInterop": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noEmit": false
   },
   "references": []
 }
