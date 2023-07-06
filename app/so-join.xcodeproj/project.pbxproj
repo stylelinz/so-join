@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */; };
 		CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */; };
 		CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5112A56E96600C4E439 /* Persistence.swift */; };
 		CB7AB5152A56E96600C4E439 /* so_join.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5132A56E96600C4E439 /* so_join.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapWithBackground.swift; sourceTree = "<group>"; };
 		CB7AB50C2A56E96600C4E439 /* so-join.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "so-join.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = so_joinApp.swift; sourceTree = "<group>"; };
 		CB7AB5112A56E96600C4E439 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB597BBC2A571D8D003BCA55 /* Hoc */ = {
+			isa = PBXGroup;
+			children = (
+				CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */,
+			);
+			path = Hoc;
+			sourceTree = "<group>";
+		};
 		CB7AB5032A56E96600C4E439 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		CB7AB50E2A56E96600C4E439 /* so-join */ = {
 			isa = PBXGroup;
 			children = (
+				CB597BBC2A571D8D003BCA55 /* Hoc */,
 				CB7AB5232A56E9F800C4E439 /* View */,
 				CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */,
 				CB7AB5112A56E96600C4E439 /* Persistence.swift */,
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
+				CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */,
 				CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */,
 				CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */,
 				CB7AB5282A56EAD600C4E439 /* MainView.swift in Sources */,

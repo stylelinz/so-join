@@ -7,21 +7,27 @@
 
 import SwiftUI
 
+
+
 struct MainView: View {
     var body: some View {
         TabView {
-            Group {
-                OverView().tabItem {
-                    Label(String(localized: "Overview", comment: "Overview"), systemImage: "chart.bar.fill")
-                }
-                SecondView().tabItem {
-                    Label(String(localized: "Create", comment: "Create"), systemImage: "plus")
-                }
-                ThirdView().tabItem {
-                    Label(String(localized: "Record", comment: "Record"), systemImage: "list.bullet.rectangle.portrait.fill")
-                }
+            WrapWithBackground {
+                OverView()
+            }.tabItem {
+                Label(String(localized: "Overview", comment: "Overview"), systemImage: "chart.bar.fill")
             }
-        }
+            WrapWithBackground {
+                SecondView()
+            }.tabItem {
+                Label(String(localized: "Create", comment: "Create"), systemImage: "plus")
+            }
+            WrapWithBackground {
+                ThirdView()
+            }.tabItem {
+                Label(String(localized: "Record", comment: "Record"), systemImage: "list.bullet.rectangle.portrait.fill")
+            }
+        }.tint(.white)
     }
 }
 
