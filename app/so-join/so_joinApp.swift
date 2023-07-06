@@ -13,8 +13,12 @@ struct so_joinApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+    }
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(red: 31 / 255, green: 38 / 255, blue: 41 / 255, alpha: 1)
     }
 }

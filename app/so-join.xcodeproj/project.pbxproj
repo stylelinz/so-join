@@ -13,6 +13,10 @@
 		CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5162A56E96600C4E439 /* ContentView.swift */; };
 		CB7AB5192A56E96700C4E439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7AB5182A56E96700C4E439 /* Assets.xcassets */; };
 		CB7AB51D2A56E96700C4E439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7AB51C2A56E96700C4E439 /* Preview Assets.xcassets */; };
+		CB7AB5252A56EA1700C4E439 /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5242A56EA1700C4E439 /* OverView.swift */; };
+		CB7AB5282A56EAD600C4E439 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5272A56EAD600C4E439 /* MainView.swift */; };
+		CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5292A56EE7400C4E439 /* SecondView.swift */; };
+		CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CB7AB5182A56E96700C4E439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB7AB51A2A56E96700C4E439 /* so_join.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = so_join.entitlements; sourceTree = "<group>"; };
 		CB7AB51C2A56E96700C4E439 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB7AB5242A56EA1700C4E439 /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
+		CB7AB5272A56EAD600C4E439 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CB7AB5292A56EE7400C4E439 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		CB7AB50E2A56E96600C4E439 /* so-join */ = {
 			isa = PBXGroup;
 			children = (
+				CB7AB5232A56E9F800C4E439 /* View */,
 				CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */,
 				CB7AB5112A56E96600C4E439 /* Persistence.swift */,
 				CB7AB5162A56E96600C4E439 /* ContentView.swift */,
@@ -73,6 +82,17 @@
 				CB7AB51C2A56E96700C4E439 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB7AB5232A56E9F800C4E439 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB7AB5242A56EA1700C4E439 /* OverView.swift */,
+				CB7AB5272A56EAD600C4E439 /* MainView.swift */,
+				CB7AB5292A56EE7400C4E439 /* SecondView.swift */,
+				CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
+				CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */,
 				CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */,
+				CB7AB5282A56EAD600C4E439 /* MainView.swift in Sources */,
 				CB7AB5152A56E96600C4E439 /* so_join.xcdatamodeld in Sources */,
+				CB7AB5252A56EA1700C4E439 /* OverView.swift in Sources */,
 				CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */,
 				CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */,
 			);
@@ -273,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"so-join/Preview Content\"";
+				DEVELOPMENT_TEAM = HY3UCDNN25;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -309,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"so-join/Preview Content\"";
+				DEVELOPMENT_TEAM = HY3UCDNN25;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
