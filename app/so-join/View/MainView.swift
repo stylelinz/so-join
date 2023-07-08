@@ -15,7 +15,12 @@ struct MainView: View {
             WrapWithBackground {
                 OverView()
             }.tabItem {
-                Label(String(localized: "Overview", comment: "Overview"), systemImage: "chart.bar.fill")
+                Label(String(localized: "Overview(Empty)", comment: "Overview"), systemImage: "chart.bar.fill")
+            }
+            WrapWithBackground {
+                OverView2()
+            }.tabItem {
+                Label(String(localized: "Overview(WithEvents)", comment: "Overview"), systemImage: "chart.bar.fill")
             }
             WrapWithBackground {
                 SecondView()

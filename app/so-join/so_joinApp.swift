@@ -13,7 +13,7 @@ struct so_joinApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView().preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
