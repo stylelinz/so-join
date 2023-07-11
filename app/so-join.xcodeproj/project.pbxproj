@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CB21DB1B2A59769900F93499 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB1A2A59769900F93499 /* EventCard.swift */; };
 		CB21DB232A5982D500F93499 /* OverView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB222A5982D500F93499 /* OverView2.swift */; };
+		CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB242A5A9C1800F93499 /* CreateView.swift */; };
+		CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */; };
 		CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */; };
 		CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */; };
 		CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5112A56E96600C4E439 /* Persistence.swift */; };
@@ -29,6 +31,8 @@
 		CB21DB202A59776000F93499 /* NotoSansTC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansTC-Regular.otf"; sourceTree = "<group>"; };
 		CB21DB212A5977A700F93499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB21DB222A5982D500F93499 /* OverView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView2.swift; sourceTree = "<group>"; };
+		CB21DB242A5A9C1800F93499 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
 		CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapWithBackground.swift; sourceTree = "<group>"; };
 		CB7AB50C2A56E96600C4E439 /* so-join.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "so-join.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = so_joinApp.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		CB21DB262A5D893300F93499 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CB597BBC2A571D8D003BCA55 /* Hoc */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		CB7AB50E2A56E96600C4E439 /* so-join */ = {
 			isa = PBXGroup;
 			children = (
+				CB21DB262A5D893300F93499 /* ViewModel */,
 				CB21DB212A5977A700F93499 /* Info.plist */,
 				CB21DB1C2A5976FB00F93499 /* Resources */,
 				CB597BBC2A571D8D003BCA55 /* Hoc */,
@@ -132,6 +145,7 @@
 				CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */,
 				CB21DB1A2A59769900F93499 /* EventCard.swift */,
 				CB21DB222A5982D500F93499 /* OverView2.swift */,
+				CB21DB242A5A9C1800F93499 /* CreateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +230,8 @@
 				CB21DB232A5982D500F93499 /* OverView2.swift in Sources */,
 				CB7AB5252A56EA1700C4E439 /* OverView.swift in Sources */,
 				CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */,
+				CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */,
+				CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */,
 				CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,37 +7,53 @@
 
 import SwiftUI
 
+class GlobalState: ObservableObject {
+    @Published var isCreate = false
+}
 
 
 struct MainView: View {
+    @ObservedObject var globalState = GlobalState()
+    
+    @State private var selectedTab = 1
+    @State private var prevSelectedTab = 1
+    
     var body: some View {
-        TabView {
-            WrapWithBackground {
-                OverView()
-            }.tabItem {
-                Label(String(localized: "Overview(Empty)", comment: "Overview"), systemImage: "chart.bar.fill")
+        WrapWithBackground {
+            TabView(selection: $selectedTab) {
+                OverView().tabItem {
+                    Label(String(localized: "Overview(Empty)", comment: "Overview"), systemImage: "chart.bar.fill")
+                }.tag(1)
+                OverView2().tabItem {
+                    Label(String(localized: "Overview(WithEvents)", comment: "Overview"), systemImage: "chart.bar.fill")
+                }.tag(4)
+                Text("").tabItem {
+                    Label(String(localized: "Create", comment: "Create"), systemImage: "plus")
+                }.tag(2)
+                ThirdView().tabItem {
+                    Label(String(localized: "Record", comment: "Record"), systemImage: "list.bullet.rectangle.portrait.fill")
+                }.tag(3)
             }
-            WrapWithBackground {
-                OverView2()
-            }.tabItem {
-                Label(String(localized: "Overview(WithEvents)", comment: "Overview"), systemImage: "chart.bar.fill")
+            .onChange(of: selectedTab) {
+                if 2 == $0 {
+                    globalState.isCreate.toggle()
+                    selectedTab = prevSelectedTab
+                } else {
+                    prevSelectedTab = $0
+                }
             }
-            WrapWithBackground {
-                SecondView()
-            }.tabItem {
-                Label(String(localized: "Create", comment: "Create"), systemImage: "plus")
+            .tint(.white)
+            .fullScreenCover(isPresented: $globalState.isCreate) {
+                WrapWithBackground {
+                    CreateView()
+                }
             }
-            WrapWithBackground {
-                ThirdView()
-            }.tabItem {
-                Label(String(localized: "Record", comment: "Record"), systemImage: "list.bullet.rectangle.portrait.fill")
-            }
-        }.tint(.white)
+        }.environmentObject(globalState)
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView().preferredColorScheme(.dark)
     }
 }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OverView: View {
- 
+    @EnvironmentObject var globalState: GlobalState
+
     var body: some View {
         NavigationStack {
             WrapWithBackground {
@@ -31,7 +32,20 @@ struct OverView: View {
                             .font(.custom("NotoSansTC-Regular", size: 18))
                             .kerning(0.72)
                         }
-                        Button(action: {}, label: {
+                        
+//                        NavigationLink(destination: CreateView()) {
+//                            Label(String(localized: "Create", comment: "Create "), systemImage: "plus")
+//                                .font(.custom("NotoSansTC-Regular", size: 18))
+//                                .kerning(0.72)
+//                                .foregroundColor(.white)
+//                                .frame(width: 181, height: 46)
+//                                .background(Color("blue.600"))
+//                                .cornerRadius(10)
+//                        }
+                        
+                        Button(action: {
+                            globalState.isCreate.toggle()
+                        }, label: {
                             Label(String(localized: "Create", comment: "Create "), systemImage: "plus")
                                 .font(.custom("NotoSansTC-Regular", size: 18))
                                 .kerning(0.72)
