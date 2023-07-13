@@ -8,7 +8,7 @@
 import SwiftUI
 
 class FormStepController: ObservableObject {
-    @Published var step: Int = 1
+    @Published var step: Int = 2
     
     func goNextStep () {
         step = step + 1
@@ -18,6 +18,8 @@ class FormStepController: ObservableObject {
         step = step - 1
     }
 }
+
+let Duration = ["30", "60", "90", "120", "180"]
 
 struct CreateView: View {
     @Environment(\.dismiss) var dismiss
@@ -50,34 +52,35 @@ struct CreateView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
+            ScrollView(.vertical, showsIndicators: false) {
                 FormSwitcherView(step: formStepController.step)
-            }
-            .padding(.horizontal, 20)
-            .toolbar {
-                ToolbarItem (placement: .navigationBarLeading) {
-                    Button(action: formStepController.goPrevStep) {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 16))
-                            .foregroundColor(.white)
+                .padding(.top, 0)
+                .padding(.horizontal, 20)
+                .toolbar {
+                    ToolbarItem (placement: .navigationBarLeading) {
+                        Button(action: formStepController.goPrevStep) {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 16))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    ToolbarItem (placement: .principal) {
+                        Text(currentStepName).font(.custom("NotoSansTC-medium", size: 18)).kerning(0.72)
+                    }
+                    ToolbarItem (placement: .navigationBarTrailing) {
+                        Button(action: formStepController.goNextStep) {
+                            Text("下一步")
+                                .font(.custom("NotoSansTC-regular", size: 16))
+                                .kerning(0.64)
+                                .foregroundColor(goNextAvailable ? .white : .white.opacity(0.3))
+                        }
+                        .disabled(!goNextAvailable)
                     }
                 }
-                ToolbarItem (placement: .principal) {
-                    Text(currentStepName).font(.custom("NotoSansTC-medium", size: 18)).kerning(0.72)
-                }
-                ToolbarItem (placement: .navigationBarTrailing) {
-                    Button(action: formStepController.goNextStep) {
-                        Text("下一步")
-                            .font(.custom("NotoSansTC-regular", size: 16))
-                            .kerning(0.64)
-                            .foregroundColor(goNextAvailable ? .white : .white.opacity(0.3))
-                    }
-                    .disabled(!goNextAvailable)
-                }
             }
-            .environmentObject(eventFormViewModel)
-            .environmentObject(formStepController)
         }
+        .environmentObject(eventFormViewModel)
+        .environmentObject(formStepController)
     }
 }
 
@@ -131,8 +134,133 @@ struct NicknameInput: View {
 }
 
 struct TimeInput: View {
+    @State private var test = ""
+    @State private var date: Date = Date()
+    @State private var time: String = "30"
+    
     var body: some View {
-        Text("TEST")
+        VStack(spacing: 26) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("活動名稱")
+                    .font(.custom("NotoSansTC-medium", size: 18))
+                    .kerning(0.72)
+                    .foregroundColor(.white.opacity(0.9))
+                TextField("", text: $test)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 17)
+                    .frame(height: 46)
+                    .background(Color("gray.800"))
+                    .cornerRadius(7)
+            }
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text("選擇日期")
+                    .font(.custom("NotoSansTC-medium", size: 18))
+                    .kerning(0.72)
+                    .foregroundColor(.white.opacity(0.9))
+                DatePicker("", selection: $date, displayedComponents: .date)
+                    .datePickerStyle(.graphical)
+            }
+            
+            VStack(alignment: .leading, spacing: 28) {
+                Text("時間區間")
+                    .font(.custom("NotoSansTC-medium", size: 18))
+                    .kerning(0.72)
+                    .foregroundColor(.white.opacity(0.9))
+                
+                HStack(spacing: 20) {
+                    Text("從")
+                        .font(.custom("NotoSansTC-medium", size: 18))
+                        .foregroundColor(.white.opacity(0.9))
+                            
+                    ZStack {
+                        DatePicker("", selection: $date,  displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity)
+                            .scaleEffect(x:5,y:1)
+                            .clipped()
+                           
+                        Text(date.formatted(date: .omitted, time: .shortened))
+                            .font(.custom("NotoSansTC-medium", size: 18))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color("gray.800"))
+                            .allowsHitTesting(false)
+                    }
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 17)
+                    .frame(maxWidth: .infinity, maxHeight: 46)
+                    .background(Color("gray.800"))
+                    .cornerRadius(7)
+                    
+                }
+                
+
+                HStack(spacing: 20) {
+                    Text("到")
+                        .font(.custom("NotoSansTC-medium", size: 18))
+                        .foregroundColor(.white.opacity(0.9))
+                    
+                    ZStack {
+                        DatePicker("", selection: $date,  displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity)
+                            .scaleEffect(x:5,y:1)
+                            .clipped()
+                        
+                        Text(date.formatted(date: .omitted, time: .shortened))
+                            .font(.custom("NotoSansTC-medium", size: 18))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color("gray.800"))
+                            .allowsHitTesting(false)
+                    }
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 17)
+                    .frame(maxWidth: .infinity, maxHeight: 46)
+                    .background(Color("gray.800"))
+                    .cornerRadius(7)
+                    
+                }
+            }
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text("時間長度")
+                    .font(.custom("NotoSansTC-medium", size: 18))
+                    .kerning(0.72)
+                    .foregroundColor(.white.opacity(0.9))
+
+                ZStack {
+                    Picker("Flavor", selection: $time) {
+                        ForEach(Duration, id: \.self) {
+                            Text("\($0)mins")
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(maxWidth: .infinity)
+                    .scaleEffect(x:5,y:1)
+                    .clipped()
+                    
+                    HStack {
+                        Text("\(time)mins")
+                            .font(.custom("NotoSansTC-medium", size: 18))
+                        Spacer()
+                        Image(systemName: "chevron.down")
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("gray.800"))
+                    .allowsHitTesting(false)
+
+
+                }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 17)
+                .frame(maxWidth: .infinity, maxHeight: 46)
+                .background(Color("gray.800"))
+                .cornerRadius(7)
+            }
+            
+            Spacer()
+        }
     }
 }
 
