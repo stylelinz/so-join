@@ -8,7 +8,7 @@
 import SwiftUI
 
 class FormStepController: ObservableObject {
-    @Published var step: Int = 2
+    @Published var step: Int = 1
     
     func goNextStep () {
         step = step + 1
@@ -58,7 +58,10 @@ struct CreateView: View {
                 .padding(.horizontal, 20)
                 .toolbar {
                     ToolbarItem (placement: .navigationBarLeading) {
-                        Button(action: formStepController.goPrevStep) {
+                        Button(action: {
+                            formStepController.step == 1 ? dismiss() : formStepController.goPrevStep()
+                            
+                        }) {
                             Image(systemName: "xmark")
                                 .font(.system(size: 16))
                                 .foregroundColor(.white)
@@ -77,7 +80,7 @@ struct CreateView: View {
                         .disabled(!goNextAvailable)
                     }
                 }
-            }
+            }.id(formStepController.step)
         }
         .environmentObject(eventFormViewModel)
         .environmentObject(formStepController)
@@ -135,8 +138,11 @@ struct NicknameInput: View {
 
 struct TimeInput: View {
     @State private var test = ""
-    @State private var date: Date = Date()
+    @State private var choosenDates: Set<Date> = []
+    @State private var timeStart: Date = Date()
+    @State private var timeEnd: Date = Date()
     @State private var time: String = "30"
+    @State private var dates: Set<DateComponents> = []
     
     var body: some View {
         VStack(spacing: 26) {
@@ -153,15 +159,14 @@ struct TimeInput: View {
                     .cornerRadius(7)
             }
             
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 18) {
                 Text("選擇日期")
                     .font(.custom("NotoSansTC-medium", size: 18))
                     .kerning(0.72)
                     .foregroundColor(.white.opacity(0.9))
-                DatePicker("", selection: $date, displayedComponents: .date)
-                    .datePickerStyle(.graphical)
+
+                CalendarPickerView(choosenDates: $choosenDates)
             }
-            
             VStack(alignment: .leading, spacing: 28) {
                 Text("時間區間")
                     .font(.custom("NotoSansTC-medium", size: 18))
@@ -174,13 +179,13 @@ struct TimeInput: View {
                         .foregroundColor(.white.opacity(0.9))
                             
                     ZStack {
-                        DatePicker("", selection: $date,  displayedComponents: .hourAndMinute)
+                        DatePicker("", selection: $timeStart,  displayedComponents: .hourAndMinute)
                             .labelsHidden()
                             .frame(maxWidth: .infinity)
                             .scaleEffect(x:5,y:1)
                             .clipped()
                            
-                        Text(date.formatted(date: .omitted, time: .shortened))
+                        Text(timeStart.formatted(date: .omitted, time: .shortened))
                             .font(.custom("NotoSansTC-medium", size: 18))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color("gray.800"))
@@ -201,13 +206,13 @@ struct TimeInput: View {
                         .foregroundColor(.white.opacity(0.9))
                     
                     ZStack {
-                        DatePicker("", selection: $date,  displayedComponents: .hourAndMinute)
+                        DatePicker("", selection: $timeEnd,  displayedComponents: .hourAndMinute)
                             .labelsHidden()
                             .frame(maxWidth: .infinity)
                             .scaleEffect(x:5,y:1)
                             .clipped()
                         
-                        Text(date.formatted(date: .omitted, time: .shortened))
+                        Text(timeEnd.formatted(date: .omitted, time: .shortened))
                             .font(.custom("NotoSansTC-medium", size: 18))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color("gray.800"))
@@ -267,7 +272,7 @@ struct TimeInput: View {
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
         WrapWithBackground {
-            CreateView()
+            CreateView().preferredColorScheme(.dark)
         }
     }
 }

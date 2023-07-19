@@ -11,6 +11,8 @@
 		CB21DB232A5982D500F93499 /* OverView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB222A5982D500F93499 /* OverView2.swift */; };
 		CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB242A5A9C1800F93499 /* CreateView.swift */; };
 		CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */; };
+		CB21DB2A2A61AC1900F93499 /* CalendarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */; };
+		CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB2C2A61BC4C00F93499 /* Date.swift */; };
 		CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */; };
 		CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */; };
 		CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5112A56E96600C4E439 /* Persistence.swift */; };
@@ -33,6 +35,8 @@
 		CB21DB222A5982D500F93499 /* OverView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView2.swift; sourceTree = "<group>"; };
 		CB21DB242A5A9C1800F93499 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
+		CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerView.swift; sourceTree = "<group>"; };
+		CB21DB2C2A61BC4C00F93499 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapWithBackground.swift; sourceTree = "<group>"; };
 		CB7AB50C2A56E96600C4E439 /* so-join.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "so-join.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7AB50F2A56E96600C4E439 /* so_joinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = so_joinApp.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CB21DB2B2A61B7B000F93499 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB21DB2C2A61BC4C00F93499 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CB597BBC2A571D8D003BCA55 /* Hoc */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		CB7AB50E2A56E96600C4E439 /* so-join */ = {
 			isa = PBXGroup;
 			children = (
+				CB21DB2B2A61B7B000F93499 /* Extensions */,
 				CB21DB262A5D893300F93499 /* ViewModel */,
 				CB21DB212A5977A700F93499 /* Info.plist */,
 				CB21DB1C2A5976FB00F93499 /* Resources */,
@@ -146,6 +159,7 @@
 				CB21DB1A2A59769900F93499 /* EventCard.swift */,
 				CB21DB222A5982D500F93499 /* OverView2.swift */,
 				CB21DB242A5A9C1800F93499 /* CreateView.swift */,
+				CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,11 +201,12 @@
 			};
 			buildConfigurationList = CB7AB5072A56E96600C4E439 /* Build configuration list for PBXProject "so-join" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hant";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = CB7AB5032A56E96600C4E439;
 			productRefGroup = CB7AB50D2A56E96600C4E439 /* Products */;
@@ -221,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
+				CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */,
 				CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */,
 				CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */,
 				CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */,
@@ -232,6 +248,7 @@
 				CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */,
 				CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */,
 				CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */,
+				CB21DB2A2A61AC1900F93499 /* CalendarPickerView.swift in Sources */,
 				CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
