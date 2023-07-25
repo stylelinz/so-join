@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+let data: [Event] = [
+    Event(name:"JOJO 展覽", timeInterval: "09:00 - 18:00", dates: ["2023-06-21", "2023-06-22", "2023-06-23"]),
+    Event(name:"桌遊@中山", timeInterval: "09:00 - 18:00", dates: ["2023-07-21", "2023-07-22", "2023-07-23"]),
+    Event(name:"讀書會", timeInterval: "18:00 - 22:00", dates: ["2023-06-21", "2023-08-22", "2023-08-23"])
+]
+
 struct OverView: View {
     @EnvironmentObject var globalState: GlobalState
 
@@ -18,46 +24,23 @@ struct OverView: View {
                         .font(.custom("NotoSansTC-Medium", size: 18))
                         .kerning(0.72)
                         .padding(.leading, 20)
-                    VStack(alignment: .center, spacing: 40) {
-                        Spacer()
-                        Image("helicopter")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 229, height: 161)
-                        VStack {
-                            Group {
-                                Text(String(localized: "You have not join any activites", comment: "You have not join any activites"))
-                                Text(String(localized: "Create one by just a click", comment: "Create one by just a click"))
+                    List {
+                        ForEach(data.indices, id: \.self) { index in
+                            ZStack(alignment: .leading) {
+                                EventCard(event: data[index])
+                                NavigationLink(destination: EventView()) {
+                                    
+                                }
+                                .opacity(0)
                             }
-                            .font(.custom("NotoSansTC-Regular", size: 18))
-                            .kerning(0.72)
                         }
-                        
-//                        NavigationLink(destination: CreateView()) {
-//                            Label(String(localized: "Create", comment: "Create "), systemImage: "plus")
-//                                .font(.custom("NotoSansTC-Regular", size: 18))
-//                                .kerning(0.72)
-//                                .foregroundColor(.white)
-//                                .frame(width: 181, height: 46)
-//                                .background(Color("blue.600"))
-//                                .cornerRadius(10)
-//                        }
-                        
-                        Button(action: {
-                            globalState.isCreate.toggle()
-                        }, label: {
-                            Label(String(localized: "Create", comment: "Create "), systemImage: "plus")
-                                .font(.custom("NotoSansTC-Regular", size: 18))
-                                .kerning(0.72)
-                        })
-                        .foregroundColor(.white)
-                        .frame(width: 181, height: 46)
-                        .background(Color("blue.600"))
-                        .cornerRadius(10)
-                        
-                        Spacer()
-                        Spacer()
-                    }.frame(maxWidth: .infinity, alignment: .center)
+                        .listRowSeparator(.hidden)
+                    }
+                    .listStyle(.plain)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+
+                    Spacer()
+                    Spacer()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)                
             }
@@ -72,6 +55,42 @@ struct OverView: View {
                 }
             }
         }
+    }
+}
+
+struct EmptyView: View {
+    @EnvironmentObject var globalState: GlobalState
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 40) {
+            Spacer()
+            Image("helicopter")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 229, height: 161)
+            VStack {
+                Group {
+                    Text(String(localized: "You have not join any activites", comment: "You have not join any activites"))
+                    Text(String(localized: "Create one by just a click", comment: "Create one by just a click"))
+                }
+                .font(.custom("NotoSansTC-Regular", size: 18))
+                .kerning(0.72)
+            }
+            
+            Button(action: {
+                globalState.isCreate.toggle()
+            }, label: {
+                Label(String(localized: "Create", comment: "Create "), systemImage: "plus")
+                    .font(.custom("NotoSansTC-Regular", size: 18))
+                    .kerning(0.72)
+            })
+            .foregroundColor(.white)
+            .frame(width: 181, height: 46)
+            .background(Color("blue.600"))
+            .cornerRadius(10)
+            Spacer()
+            Spacer()
+        }.frame(maxWidth: .infinity, alignment: .center)
     }
 }
 

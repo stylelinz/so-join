@@ -22,11 +22,8 @@ struct MainView: View {
         WrapWithBackground {
             TabView(selection: $selectedTab) {
                 OverView().tabItem {
-                    Label(String(localized: "Overview(Empty)", comment: "Overview"), systemImage: "chart.bar.fill")
+                    Label(String(localized: "Overview", comment: "Overview"), systemImage: "chart.bar.fill")
                 }.tag(1)
-                OverView2().tabItem {
-                    Label(String(localized: "Overview(WithEvents)", comment: "Overview"), systemImage: "chart.bar.fill")
-                }.tag(4)
                 Text("").tabItem {
                     Label(String(localized: "Create", comment: "Create"), systemImage: "plus")
                 }.tag(2)

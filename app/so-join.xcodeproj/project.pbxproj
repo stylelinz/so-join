@@ -25,6 +25,8 @@
 		CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB5292A56EE7400C4E439 /* SecondView.swift */; };
 		CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */; };
 		CB89CBD22A6EA6F400C4B5D3 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */; };
+		CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */; };
+		CB89CBD72A6FF92000C4B5D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD62A6FF92000C4B5D3 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		CB7AB5292A56EE7400C4E439 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		CB7AB52B2A56EE7D00C4E439 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
+		CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		CB89CBD62A6FF92000C4B5D3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		CB7AB50E2A56E96600C4E439 /* so-join */ = {
 			isa = PBXGroup;
 			children = (
+				CB89CBD52A6FF91400C4B5D3 /* Model */,
 				CB21DB2B2A61B7B000F93499 /* Extensions */,
 				CB21DB262A5D893300F93499 /* ViewModel */,
 				CB21DB212A5977A700F93499 /* Info.plist */,
@@ -163,8 +168,17 @@
 				CB21DB242A5A9C1800F93499 /* CreateView.swift */,
 				CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */,
 				CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */,
+				CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CB89CBD52A6FF91400C4B5D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB89CBD62A6FF92000C4B5D3 /* Event.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,12 +255,14 @@
 				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
 				CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */,
 				CB89CBD22A6EA6F400C4B5D3 /* InviteView.swift in Sources */,
+				CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */,
 				CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */,
 				CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */,
 				CB7AB5102A56E96600C4E439 /* so_joinApp.swift in Sources */,
 				CB21DB1B2A59769900F93499 /* EventCard.swift in Sources */,
 				CB7AB5282A56EAD600C4E439 /* MainView.swift in Sources */,
 				CB7AB5152A56E96600C4E439 /* so_join.xcdatamodeld in Sources */,
+				CB89CBD72A6FF92000C4B5D3 /* Event.swift in Sources */,
 				CB21DB232A5982D500F93499 /* OverView2.swift in Sources */,
 				CB7AB5252A56EA1700C4E439 /* OverView.swift in Sources */,
 				CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */,

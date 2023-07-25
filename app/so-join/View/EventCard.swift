@@ -7,16 +7,63 @@
 
 import SwiftUI
 
+enum EvnetCardVariants {
+    case SMALL
+    case MEDIUM
+}
+
 struct EventCard: View {
+    var name: String
+    var timeInterval: String
+    var dates: [String]
+    var variant: EvnetCardVariants
+    
+    private var height: CGFloat {
+        get {
+            switch variant {
+            case .SMALL: return 206
+            case .MEDIUM: return 270
+            }
+        }
+    }
+    
+    init() {
+        self.variant = .SMALL
+        self.name = "<blank>"
+        self.timeInterval = "<blank>"
+        self.dates = ["<blank>"]
+    }
+    
+    init(variant: EvnetCardVariants) {
+        self.variant = variant
+        self.name = "<blank>"
+        self.timeInterval = "<blank>"
+        self.dates = ["<blank>"]
+    }
+    
+    init(event: Event) {
+        self.variant = .SMALL
+        self.name = event.name
+        self.timeInterval = event.timeInterval
+        self.dates = event.dates
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("JOJO 展覽").font(.custom("NotoSansTC-Medium", size: 24))
             
-            Spacer()
+            variant == .MEDIUM ? Text(timeInterval).font(.custom("NotoSansTC-Bold", size: 12)).foregroundColor(.white.opacity(0.8)).padding(.bottom, 4) : nil
             
-            Text("上午 12:00 - 下午 7:00").font(.custom("NotoSansTC-Bold", size: 12)).foregroundColor(.white.opacity(0.8))
+            switch variant {
+            case .SMALL:
+                Text(name).font(.custom("NotoSansTC-Medium", size: 24))
+            case .MEDIUM:
+                Text(name).font(.custom("NotoSansTC-Bold", size: 32)).padding(.bottom, 4)
+            }
             
-            Spacer()
+           
+            variant == .MEDIUM ? nil : Spacer()
+            variant == .SMALL ? Text(timeInterval).font(.custom("NotoSansTC-Bold", size: 12)).foregroundColor(.white.opacity(0.8)) : nil
+            variant == .MEDIUM ? nil : Spacer()
             
             Text("3月").font(.custom("NotoSansTC-Medium", size: 18)).kerning(0.72)
             
@@ -50,7 +97,7 @@ struct EventCard: View {
         }
         .padding(.vertical, 20)
         .padding(.horizontal, 16)
-        .frame(width: .infinity, height: 204, alignment: .topLeading)
+        .frame(width: .infinity, height: height, alignment: .topLeading)
         .background(Color("surface"))
         .foregroundColor(.white)
         .cornerRadius(16)
@@ -71,7 +118,10 @@ struct EventCard: View {
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
         WrapWithBackground {
-            EventCard()
+            VStack {
+                EventCard()
+                EventCard(variant: .MEDIUM)
+            }
         }
     }
 }
