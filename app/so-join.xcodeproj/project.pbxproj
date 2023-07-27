@@ -27,6 +27,7 @@
 		CB89CBD22A6EA6F400C4B5D3 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */; };
 		CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */; };
 		CB89CBD72A6FF92000C4B5D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD62A6FF92000C4B5D3 /* Event.swift */; };
+		CB89CBD92A72927500C4B5D3 /* SharePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
 		CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		CB89CBD62A6FF92000C4B5D3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePanelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */,
 				CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */,
 				CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */,
+				CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
 				CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */,
 				CB89CBD22A6EA6F400C4B5D3 /* InviteView.swift in Sources */,
+				CB89CBD92A72927500C4B5D3 /* SharePanelView.swift in Sources */,
 				CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */,
 				CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */,
 				CB7AB52A2A56EE7400C4E439 /* SecondView.swift in Sources */,
