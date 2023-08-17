@@ -64,4 +64,21 @@ public extension Date {
         return components.day!
     }
     
+    func format(_ format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
+    func getDate() -> (Int, Int, Int) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        return (components.year!, components.month!, components.day!)
+    }
+    
+    func getTime() -> (Int, Int, Int) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute, .second], from: self)
+        return (components.hour!, components.minute!, components.second!)
+    }
 }

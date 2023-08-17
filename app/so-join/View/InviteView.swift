@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct InviteView: View {
+    @Environment(\.dismiss) var dismiss
+    var onDismiss: () -> Void
     var body: some View {
         ZStack {
             Color("gray.800").ignoresSafeArea()
             VStack(spacing: 15) {
                 Group {
-                    Text("略過")
-                        .font(.custom("NotoSansTC-medium", size: 16))
-                        .kerning(0.64)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding(.bottom, 30)
+                    Button(action: {
+                        dismiss()
+                        onDismiss()
+                    }) {
+                        Text("略過")
+                            .font(.custom("NotoSansTC-medium", size: 16))
+                            .kerning(0.64)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding(.bottom, 30)
+                    }
                     Text("邀請好友來填寫")
                         .font(.custom("NotoSansTC-medium", size: 24))
                     Text("分享連結即可讓朋友完成填寫")
@@ -58,6 +65,6 @@ struct InviteView: View {
 
 struct InviteView_Previews: PreviewProvider {
     static var previews: some View {
-        InviteView()
+        InviteView(onDismiss: {})
     }
 }

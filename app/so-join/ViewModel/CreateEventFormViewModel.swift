@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 import UIKit
-class EventFormViewModel: ObservableObject {
+class CreateEventFormViewModel: ObservableObject {
     @Published var nickname: String = ""
     
 //    init() {

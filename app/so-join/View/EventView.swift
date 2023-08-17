@@ -9,6 +9,9 @@ import SwiftUI
 
 struct EventView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @State private var isTryReg: Bool = false
+    
     var body: some View {
         NavigationStack  {
             VStack(spacing: 22) {
@@ -16,7 +19,9 @@ struct EventView: View {
                 
                 VStack(spacing: 16) {
                     Group {
-                        Button(action: {}) {
+                        Button(action: {
+                            isTryReg.toggle()
+                        }) {
                             Text("填寫可參與時段")
                         }
                         .frame(maxWidth: .infinity)
@@ -55,6 +60,11 @@ struct EventView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $isTryReg) {
+            WrapWithBackground {
+                RegisterView()
+            }
+        }
     }
 }
 

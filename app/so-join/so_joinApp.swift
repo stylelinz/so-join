@@ -20,5 +20,6 @@ struct so_joinApp: App {
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(red: 31 / 255, green: 38 / 255, blue: 41 / 255, alpha: 1)
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }

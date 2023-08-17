@@ -10,7 +10,7 @@
 		CB21DB1B2A59769900F93499 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB1A2A59769900F93499 /* EventCard.swift */; };
 		CB21DB232A5982D500F93499 /* OverView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB222A5982D500F93499 /* OverView2.swift */; };
 		CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB242A5A9C1800F93499 /* CreateView.swift */; };
-		CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */; };
+		CB21DB282A5D894D00F93499 /* CreateEventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB272A5D894D00F93499 /* CreateEventFormViewModel.swift */; };
 		CB21DB2A2A61AC1900F93499 /* CalendarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */; };
 		CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21DB2C2A61BC4C00F93499 /* Date.swift */; };
 		CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */; };
@@ -28,6 +28,10 @@
 		CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */; };
 		CB89CBD72A6FF92000C4B5D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD62A6FF92000C4B5D3 /* Event.swift */; };
 		CB89CBD92A72927500C4B5D3 /* SharePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */; };
+		CB89CBDB2A764A4800C4B5D3 /* NicknameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBDA2A764A4800C4B5D3 /* NicknameInput.swift */; };
+		CB89CBDD2A764CDD00C4B5D3 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBDC2A764CDD00C4B5D3 /* RegisterView.swift */; };
+		CB89CBDF2A764D8300C4B5D3 /* FormStepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBDE2A764D8300C4B5D3 /* FormStepController.swift */; };
+		CB89CBE32A7651E600C4B5D3 /* RegisterEventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89CBE22A7651E600C4B5D3 /* RegisterEventFormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +42,7 @@
 		CB21DB212A5977A700F93499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB21DB222A5982D500F93499 /* OverView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView2.swift; sourceTree = "<group>"; };
 		CB21DB242A5A9C1800F93499 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
-		CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
+		CB21DB272A5D894D00F93499 /* CreateEventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventFormViewModel.swift; sourceTree = "<group>"; };
 		CB21DB292A61AC1900F93499 /* CalendarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerView.swift; sourceTree = "<group>"; };
 		CB21DB2C2A61BC4C00F93499 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB597BBD2A571DA6003BCA55 /* WrapWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapWithBackground.swift; sourceTree = "<group>"; };
@@ -58,6 +62,10 @@
 		CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		CB89CBD62A6FF92000C4B5D3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePanelView.swift; sourceTree = "<group>"; };
+		CB89CBDA2A764A4800C4B5D3 /* NicknameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInput.swift; sourceTree = "<group>"; };
+		CB89CBDC2A764CDD00C4B5D3 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CB89CBDE2A764D8300C4B5D3 /* FormStepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepController.swift; sourceTree = "<group>"; };
+		CB89CBE22A7651E600C4B5D3 /* RegisterEventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventFormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +100,8 @@
 		CB21DB262A5D893300F93499 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CB21DB272A5D894D00F93499 /* EventFormViewModel.swift */,
+				CB21DB272A5D894D00F93499 /* CreateEventFormViewModel.swift */,
+				CB89CBE22A7651E600C4B5D3 /* RegisterEventFormViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,6 +181,8 @@
 				CB89CBD12A6EA6F400C4B5D3 /* InviteView.swift */,
 				CB89CBD32A6FF03B00C4B5D3 /* EventView.swift */,
 				CB89CBD82A72927500C4B5D3 /* SharePanelView.swift */,
+				CB89CBDA2A764A4800C4B5D3 /* NicknameInput.swift */,
+				CB89CBDC2A764CDD00C4B5D3 /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				CB89CBD62A6FF92000C4B5D3 /* Event.swift */,
+				CB89CBDE2A764D8300C4B5D3 /* FormStepController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB7AB52C2A56EE7D00C4E439 /* ThirdView.swift in Sources */,
+				CB89CBDF2A764D8300C4B5D3 /* FormStepController.swift in Sources */,
 				CB21DB2D2A61BC4C00F93499 /* Date.swift in Sources */,
 				CB89CBD22A6EA6F400C4B5D3 /* InviteView.swift in Sources */,
+				CB89CBDD2A764CDD00C4B5D3 /* RegisterView.swift in Sources */,
 				CB89CBD92A72927500C4B5D3 /* SharePanelView.swift in Sources */,
 				CB89CBD42A6FF03B00C4B5D3 /* EventView.swift in Sources */,
 				CB597BBE2A571DA6003BCA55 /* WrapWithBackground.swift in Sources */,
@@ -267,11 +281,13 @@
 				CB7AB5282A56EAD600C4E439 /* MainView.swift in Sources */,
 				CB7AB5152A56E96600C4E439 /* so_join.xcdatamodeld in Sources */,
 				CB89CBD72A6FF92000C4B5D3 /* Event.swift in Sources */,
+				CB89CBDB2A764A4800C4B5D3 /* NicknameInput.swift in Sources */,
 				CB21DB232A5982D500F93499 /* OverView2.swift in Sources */,
 				CB7AB5252A56EA1700C4E439 /* OverView.swift in Sources */,
 				CB7AB5172A56E96600C4E439 /* ContentView.swift in Sources */,
-				CB21DB282A5D894D00F93499 /* EventFormViewModel.swift in Sources */,
+				CB21DB282A5D894D00F93499 /* CreateEventFormViewModel.swift in Sources */,
 				CB21DB252A5A9C1800F93499 /* CreateView.swift in Sources */,
+				CB89CBE32A7651E600C4B5D3 /* RegisterEventFormViewModel.swift in Sources */,
 				CB21DB2A2A61AC1900F93499 /* CalendarPickerView.swift in Sources */,
 				CB7AB5122A56E96600C4E439 /* Persistence.swift in Sources */,
 			);
