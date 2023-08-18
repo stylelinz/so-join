@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum EvnetCardVariants {
+enum EventCardVariants {
     case SMALL
     case MEDIUM
 }
@@ -16,7 +16,9 @@ struct EventCard: View {
     var name: String
     var timeInterval: String
     var dates: [String]
-    var variant: EvnetCardVariants
+    var variant: EventCardVariants
+    var onMoreClick: () -> Void
+    @State private var showModal = false
     
     private var height: CGFloat {
         get {
@@ -32,20 +34,33 @@ struct EventCard: View {
         self.name = "<blank>"
         self.timeInterval = "<blank>"
         self.dates = ["<blank>"]
+        self.onMoreClick = {}
     }
+
     
-    init(variant: EvnetCardVariants) {
+    init(variant: EventCardVariants) {
         self.variant = variant
         self.name = "<blank>"
         self.timeInterval = "<blank>"
         self.dates = ["<blank>"]
+        self.onMoreClick = {}
     }
+
     
-    init(event: Event) {
+    init(event: Event, onMoreClick: @escaping () -> Void) {
         self.variant = .SMALL
         self.name = event.name
         self.timeInterval = event.timeInterval
         self.dates = event.dates
+        self.onMoreClick = onMoreClick
+    }
+    
+    init(event: Event, variant: EventCardVariants, onMoreClick: @escaping () -> Void) {
+        self.variant = variant
+        self.name = event.name
+        self.timeInterval = event.timeInterval
+        self.dates = event.dates
+        self.onMoreClick = onMoreClick
     }
     
     var body: some View {
@@ -101,17 +116,17 @@ struct EventCard: View {
         .background(Color("surface"))
         .foregroundColor(.white)
         .cornerRadius(16)
-        .overlay {
-            VStack {
-                Image(systemName: "ellipsis")
-                    .frame(minWidth:0, maxWidth: .infinity,minHeight: 0, maxHeight: .infinity ,alignment: .topTrailing)
-                    .padding(.top, 28)
-                    .padding(.trailing, 24)
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
+        .overlay(alignment: .topTrailing) {
+            Image(systemName: "ellipsis")
+            .font(.system(size: 16))
+            .foregroundColor(.white)
+            .frame(width: 16, height: 16)
+            .padding(.top, 28)
+            .padding(.trailing, 24)
+            .onTapGesture {
+                onMoreClick()
             }
         }
-
     }
 }
 
@@ -119,7 +134,7 @@ struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
         WrapWithBackground {
             VStack {
-                EventCard()
+                EventCard(variant: .SMALL)
                 EventCard(variant: .MEDIUM)
             }
         }

@@ -15,44 +15,51 @@ let data: [Event] = [
 
 struct OverView: View {
     @EnvironmentObject var globalState: GlobalState
-
+    @State private var showModal = false
     var body: some View {
-        NavigationStack {
-            WrapWithBackground {
-                VStack(alignment: .leading) {
-                    Text(String(localized: "Activities schedule", comment: "Activities schedule"))
-                        .font(.custom("NotoSansTC-Medium", size: 18))
-                        .kerning(0.72)
-                        .padding(.leading, 20)
-                    List {
-                        ForEach(data.indices, id: \.self) { index in
-                            ZStack(alignment: .leading) {
-                                EventCard(event: data[index])
-                                NavigationLink(destination: EventView()) {
-                                    
-                                }
-                                .opacity(0)
-                            }
-                        }
-                        .listRowSeparator(.hidden)
-                    }
-                    .listStyle(.plain)
-                    .frame(minWidth: 0, maxWidth: .infinity)
+        GeometryReader { gp in
+            NavigationStack {
+                WrapWithBackground {
+                    VStack(alignment: .leading) {
+                        Text(String(localized: "Activities schedule", comment: "Activities schedule"))
+                            .font(.custom("NotoSansTC-Medium", size: 18))
+                            .kerning(0.72)
+                            .padding(.leading, 20)
+                        List {
+                            ForEach(data.indices, id: \.self) { index in
+                                ZStack(alignment: .leading) {
+                                    EventCard(event: data[index], onMoreClick: {
+                                        showModal.toggle()
+                                    })
+                                    NavigationLink(destination: EventView()) {
 
-                    Spacer()
-                    Spacer()
+                                    }
+                                    .opacity(0)
+                                }
+                            }
+                            .listRowSeparator(.hidden)
+                        }
+                        .listStyle(.plain)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+
+                        Spacer()
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)                
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text(String(localized: "Overview", comment: "Overview"))
+                            .font(.custom("NotoSansTC-Medium", size: 32))
+                            .kerning(0.72)
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemName: "gearshape.fill").padding(.top, 13)
+                    }
+                }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text(String(localized: "Overview", comment: "Overview"))
-                        .font(.custom("NotoSansTC-Medium", size: 32))
-                        .kerning(0.72)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "gearshape.fill").padding(.top, 13)
-                }
+            .sheet(isPresented: $showModal) {
+                SharePanelView(gp: gp)
             }
         }
     }
@@ -97,7 +104,7 @@ struct EmptyView: View {
 struct OverView_Previews: PreviewProvider {
     static var previews: some View {
         WrapWithBackground {
-            OverView()
+            OverView().preferredColorScheme(.dark)
         }
     }
 }

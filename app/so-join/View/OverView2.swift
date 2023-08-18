@@ -17,7 +17,7 @@ struct OverView2: View {
                         .kerning(0.72)
                         .padding(.leading, 20)
                     List {
-                        EventCard().listRowSeparator(.hidden)
+                        EventCard(variant: .MEDIUM).listRowSeparator(.hidden)
                         EventCard().listRowSeparator(.hidden)
                         EventCard().listRowSeparator(.hidden)
                         EventCard().listRowSeparator(.hidden)
@@ -42,6 +42,6 @@ struct OverView2: View {
 
 struct OverView2_Previews: PreviewProvider {
     static var previews: some View {
-        OverView2()
+        OverView2().preferredColorScheme(.dark)
     }
 }
